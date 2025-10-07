@@ -1,0 +1,140 @@
+/* Better Aesthetics and Modern Look */
+
+/* Color Palette */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --background-light: #f4f4f9;
+    --background-white: #fff;
+    --text-dark: #333;
+    --text-medium: #555;
+    --border-light: #ccc;
+    --border-blue: #007bff;
+    --shadow-subtle: 0 4px 8px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 20px; /* Add some padding on smaller screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background: var(--background-white);
+    padding: 30px; /* Increase padding for a more spacious feel */
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: var(--shadow-subtle);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow on hover */
+}
+
+.container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+h1 {
+    color: var(--text-dark);
+    font-size: 2.5em; /* Larger, more modern heading */
+    margin-bottom: 20px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 10px; /* Space between input and button */
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    flex-grow: 1; /* Allow input to fill available space */
+    padding: 12px; /* More padding for better tap targets on mobile */
+    border-radius: 8px; /* Nicer rounded corners */
+    border: 1px solid var(--border-light);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button {
+    padding: 12px 20px; /* Adjusted padding */
+    border-radius: 8px; /* Consistent rounded corners */
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    min-width: 100px; /* Ensure a minimum width for consistent sizing */
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(1px); /* Slight press-down effect */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none; /* Disable transform effect when disabled */
+}
+
+.output-section {
+    border: 2px solid var(--border-blue);
+    border-radius: 12px; /* Consistent corner radius */
+    padding: 25px; /* More internal space */
+    margin-top: 30px;
+}
+
+.number-display {
+    font-size: 5em; /* Larger, more impactful number */
+    font-weight: bold;
+    color: var(--primary-color);
+    font-variant-numeric: tabular-nums; /* Align numbers neatly */
+}
+
+.progress-tracker {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: var(--text-medium);
+}
+
+#next_btn {
+    margin-top: 20px;
+}
+
+#start_btn {
+    margin-top: 0px;
+    width: 60px;
+    height: 45px;
+    padding: 8px 12px;
+    height: auto;
+}
+
+/* Add some animation for the output-section when it becomes visible */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.output-section {
+    animation: fadeIn 0.5s ease-out;
+}
