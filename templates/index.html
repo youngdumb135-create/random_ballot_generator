@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Auction Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Auction Generator</h1>
+        <div class="input-section">
+            <label for="total_players">Total number of players:</label>
+            <input type="number" id="total_players" min="1" value="10">
+            <button id="start_btn">Start Auction</button>
+        </div>
+        <div id="auction-output" class="output-section">
+            <h2>Current Player Number:</h2>
+            <div id="player_number" class="number-display">--</div>
+            <div id="progress" class="progress-tracker"></div>
+        </div>
+        <button id="next_btn" style="display:none;">Next Player</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
